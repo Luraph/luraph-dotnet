@@ -35,7 +35,7 @@ Install-Package Luraph.API
 
 *The official [Luraph API documentation](https://lura.ph/dashboard/documents/apidoc) contains the most up-to-date and complete information and instructions for integrating with the Luraph API.*
 
-### class LuraphAPI {#class-luraphapi}
+### class LuraphAPI
 
 #### new LuraphAPI(string apiKey)
 
@@ -54,7 +54,7 @@ Description: Obtains a list of available obfuscation nodes.
 
 Parameters: *None!*
 
-Returns: [*NodesResponse*](#class-nodesresponse)
+Returns: [*NodesResponse*](#struct-nodesresponse)
 
 ---
 
@@ -70,7 +70,7 @@ Parameters:
 - **useTokens** - A boolean on whether you'd like to use tokens regardless of your active subscription.
 - **enforceSettings** - A boolean on whether you'd like the `options` field to require *every* option requested by the server to be present with a valid value. If this is false, your integration will not break when invalid options are provided; however, updates that change Luraph's options will result in your integration using default settings when invalid values are specified. By default, this is set to `true`.
 
-Returns: [*CreateJobResponse*](#class-createjobresponse)
+Returns: [*CreateJobResponse*](#struct-createjobresponse)
 
 ---
 
@@ -81,7 +81,7 @@ Description: This endpoint does not return until the referenced obfuscation job 
 Parameters:
 - **jobId** - The job ID of the obfuscation to wait for.
 
-Returns: [*ObfuscateStatusResponse*](#class-obfuscatestatusresponse)
+Returns: [*ObfuscateStatusResponse*](#struct-obfuscatestatusresponse)
 
 ---
 
@@ -92,11 +92,11 @@ Description: Downloads the resulting file associated with an obfuscation job.
 Parameters:
 - **jobId** - The job ID of the obfuscation to download.
 
-Returns: [*ObfuscateDownloadResponse*](#class-obfuscatedownloadresponse)
+Returns: [*ObfuscateDownloadResponse*](#struct-obfuscatedownloadresponse)
 
 ---
 
-### struct LuraphOption {class-luraphoption}
+### struct LuraphOption
 
 Fields:
 - string **Name** - The human readable name associated with an option.
@@ -107,15 +107,15 @@ Fields:
 
 ---
 
-### struct LuraphNode {class-luraphnode}
+### struct LuraphNode
 
 Fields:
 - double **CpuUsage** - The current CPU usage of the node.
-- Dictionary&lt;string, [*LuraphOption*](#class-luraphoption)&gt; **Options** - An object with option identifiers as keys and `LuraphOption` as values.
+- Dictionary&lt;string, [*LuraphOption*](#struct-luraphoption)&gt; **Options** - An object with option identifiers as keys and `LuraphOption` as values.
 
 ---
 
-### struct LuraphError {class-lurapherror}
+### struct LuraphError
 
 Fields:
 - string? **Param** - The parameter associated with the cause of the error.
@@ -123,22 +123,22 @@ Fields:
 
 ---
 
-### struct NodesResponse {class-nodesresponse}
+### struct NodesResponse
 
 Fields:
 - string? **RecommendedId** - The most suitable node to perform an obfuscation based on current service load and other possible factors.
-- Dictionary&lt;string, [*LuraphNode*](#class-luraphnode)&gt; **Nodes** - A list of all available nodes to submit obfuscation jobs to.
+- Dictionary&lt;string, [*LuraphNode*](#struct-luraphnode)&gt; **Nodes** - A list of all available nodes to submit obfuscation jobs to.
 
 ---
 
-### struct CreateJobResponse {class-createjobresponse}
+### struct CreateJobResponse
 
 Fields:
 - string **JobId** - A unique identifier for the queued obfuscation job.
 
 ---
 
-### struct ObfuscateStatusResponse {class-obfuscatestatusresponse}
+### struct ObfuscateStatusResponse
 
 Fields:
 - bool **Success** - A boolean indicating whether the job was successful.
@@ -146,7 +146,7 @@ Fields:
 
 ---
 
-### struct ObfuscateDownloadResponse {class-obfuscatedownloadresponse}
+### struct ObfuscateDownloadResponse
 
 Fields:
 - string **FileName** - A sanitized version of the initial filename, including a suffix to differentiate it from the original filename.
@@ -158,7 +158,7 @@ Fields:
 
 Fields:
 - bool **IsHttpError** - Whether the exception was caused by an unhandled error.
-- **Errors** - An array of [*LuraphError*](#class-lurapherror).
+- **Errors** - An array of [*LuraphError*](#struct-lurapherror).
 - **Message** - A human readable collection of error messages returned by a request.
 
 ## Useful Links
