@@ -14,12 +14,12 @@ This repository hosts the official SDK for interacting with the Luraph API from 
 *See more information on the [NuGet Gallery Page](https://www.nuget.org/packages/luraph.api).*
 
 Installation via [.NET CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/):
-```
+```sh
 dotnet add package Luraph.API
 ```
 
 Installation via [Package Manager Console](https://docs.microsoft.com/en-us/nuget/tools/package-manager-console):
-```
+```powershell
 Install-Package Luraph.API
 ```
 
