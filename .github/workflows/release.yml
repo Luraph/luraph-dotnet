@@ -19,6 +19,13 @@ jobs:
       - name: Create nupkg
         run: dotnet pack --configuration Release --p:Version=${VERSION} --output . ./Luraph.NET/Luraph.NET.csproj
 
+      - name: Upload nupkg to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+            fail_on_unmatched_files: true
+            files: |
+              *.nupkg
+
       - name: Publish to NuGET repository
         run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
         env:
