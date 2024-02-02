@@ -1,0 +1,27 @@
+name: publish to nuget
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment:
+      name: nuget
+      url:
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Obtain version
+        run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+
+      - name: Create nupkg
+        run: dotnet pack --configuration Release --p:Version=${VERSION} --output . ./Luraph.NET/Luraph.NET.csproj
+
+      - name: Publish to NuGET repository
+        run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
+        env:
+            NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        
+      

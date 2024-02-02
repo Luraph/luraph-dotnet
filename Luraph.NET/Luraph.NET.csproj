@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Luraph</RootNamespace>
+    <AssemblyName>LuraphAPI</AssemblyName>
+    <SignAssembly>False</SignAssembly>
+    <PackageId>Luraph.API</PackageId>
+    <Title>Luraph API</Title>
+    <Authors>memcorrupt</Authors>
+    <Company>Luraph</Company>
+    <Product>API</Product>
+    <Description>Luraph API binding for .NET</Description>
+    <Copyright>MIT License - Copyright (c) 2024 CorruptedMemes LLC</Copyright>
+    <PackageProjectUrl>https://github.com/Luraph/luraph-dotnet#readme</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Luraph/luraph-dotnet.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>luraph;obfuscator;obfuscate;obfuscation;lua;luau;luajit;lua encrypt;lua encryption;lua obfuscate;lua obfuscator;lua obfuscation;roblox;synapse;scriptware;fivem;gta;growtopia;assetto corsa;lightroom;gmod</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <AnalysisLevel>latest-minimum</AnalysisLevel>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <WarningLevel>9999</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <WarningLevel>9999</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
