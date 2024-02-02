@@ -13,7 +13,7 @@
     <Company>Luraph</Company>
     <Product>API</Product>
     <Description>Luraph API binding for .NET</Description>
-    <Copyright>MIT License - Copyright (c) 2024 CorruptedMemes LLC</Copyright>
+    <Copyright>Copyright (c) 2024 CorruptedMemes LLC - MIT License</Copyright>
     <PackageProjectUrl>https://github.com/Luraph/luraph-dotnet#readme</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

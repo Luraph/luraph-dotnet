@@ -1,6 +1,9 @@
 # luraph-dotnet
 
-*todo badges*
+[![Version](https://img.shields.io/nuget/v/luraph.api.svg)](https://www.nuget.org/packages/luraph.api)
+[![Downloads](https://img.shields.io/nuget/dt/luraph.api.svg)](https://www.nuget.org/packages/luraph.api)
+[![Build Status](https://github.com/Luraph/luraph-dotnet/actions/workflows/release.yml/badge.svg)](https://github.com/Luraph/luraph-dotnet/actions/workflows/release.yml)
+[![License](https://img.shields.io/github/license/Luraph/luraph-dotnet)](LICENSE)
 
 This repository hosts the official SDK for interacting with the Luraph API from .NET environments.
 
@@ -8,7 +11,19 @@ This repository hosts the official SDK for interacting with the Luraph API from 
 
 ## Installation
 
-*todo install*
+*See more information on the [NuGet Gallery Page](https://www.nuget.org/packages/luraph.api).*
+
+Installation via [.NET CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/):
+```
+dotnet add package Luraph.API
+```
+
+Installation via [Package Manager Console](https://docs.microsoft.com/en-us/nuget/tools/package-manager-console):
+```
+Install-Package Luraph.API
+```
+
+
 
 ## Usage
 
