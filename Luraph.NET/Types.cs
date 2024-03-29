@@ -20,8 +20,14 @@ namespace Luraph.APITypes
         [JsonPropertyName("type")]
         public readonly string Type;
 
+        [JsonPropertyName("required")]
+        public readonly bool Required;
+
         [JsonPropertyName("choices")]
         public readonly string[] Choices;
+
+        [JsonPropertyName("dependencies")]
+        public readonly Dictionary<string, object[]>? Dependencies;
 
         [JsonConstructor]
         public LuraphOption(string name, string description, string tier, string type, string[] choices) => (Name, Description, Tier, Type, Choices) = (name, description, tier, type, choices);

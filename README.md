@@ -103,7 +103,9 @@ Fields:
 - string **Description** - The markdown formatted description for an option.
 - **Tier** - One of `CUSTOMER_ONLY`, `PREMIUM_ONLY`, `ADMIN_ONLY`.
 - **Type** - One of `CHECKBOX`, `DROPDOWN`, `TEXT`.
+- bool **Required** - If creating a user interface to integrate with Luraph, settings that contain a value of `true` for this field should be explicitly set by the user, since they have a high chance of causing incorrect output when not set properly.
 - string[] **Choices** - An array of acceptable option values when `type == DROPDOWN`.
+- Dictionary<string, object[]>? **dependencies** - An array of required prerequisite values before this setting can be changed from the default value.
 
 ---
 

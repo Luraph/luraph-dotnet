@@ -23,7 +23,16 @@ foreach(var entry in node.Options)
     Console.WriteLine($"  |- Description: {optionInfo.Description}");
     Console.WriteLine($"  |- Type: {optionInfo.Type}");
     Console.WriteLine($"  |- Tier: {optionInfo.Tier}");
+    Console.WriteLine($"  |- Required: {optionInfo.Required}");
     Console.WriteLine($"  |- Choices: [{string.Join(", ", optionInfo.Choices)}]");
+    if(optionInfo.Dependencies != null)
+    {
+        Console.WriteLine($"  |- Dependencies");
+        foreach (var dep in optionInfo.Dependencies)
+        {
+            Console.WriteLine($"    * {dep.Key}: [{string.Join(", ", dep.Value)}]");
+        }
+    }
     Console.WriteLine();
 }
 
