@@ -58,7 +58,7 @@ Returns: [*NodesResponse*](#struct-nodesresponse)
 
 ---
 
-#### CreateNewJob(string node, string script, string fileName, Dictionary<string, object> options, bool useTokens = false, bool enforceSettings = false)
+#### CreateNewJob(string node, string script, string fileName, Dictionary&lt;string, object&gt; options, bool useTokens = false, bool enforceSettings = false)
 
 Description: Queues a new obfuscation task.
 
@@ -101,11 +101,11 @@ Returns: [*ObfuscateDownloadResponse*](#struct-obfuscatedownloadresponse)
 Fields:
 - string **Name** - The human readable name associated with an option.
 - string **Description** - The markdown formatted description for an option.
-- **Tier** - One of `CUSTOMER_ONLY`, `PREMIUM_ONLY`, `ADMIN_ONLY`.
-- **Type** - One of `CHECKBOX`, `DROPDOWN`, `TEXT`.
+- [*LuraphOptionTier*](#enum-luraphoptiontier) **Tier** - Required tier to access the option.
+- [*LuraphOptionType*](#enum-luraphoptiontype) **Type** - The type of input requested for the option.
 - bool **Required** - If creating a user interface to integrate with Luraph, settings that contain a value of `true` for this field should be explicitly set by the user, since they have a high chance of causing incorrect output when not set properly.
 - string[] **Choices** - An array of acceptable option values when `type == DROPDOWN`.
-- Dictionary<string, object[]>? **dependencies** - An array of required prerequisite values before this setting can be changed from the default value.
+- Dictionary&lt;string, object[]&gt;? **dependencies** - An array of required prerequisite values before this setting can be changed from the default value.
 
 ---
 
@@ -162,6 +162,26 @@ Fields:
 - bool **IsHttpError** - Whether the exception was caused by an unhandled error.
 - **Errors** - An array of [*LuraphError*](#struct-lurapherror).
 - **Message** - A human readable collection of error messages returned by a request.
+
+---
+
+### enum LuraphOptionTier
+
+Values:
+- **CUSTOMER_ONLY** - All customers can access this option.
+- **PREMIUM_ONLY** - Only customers on a plan with premium features can access this option.
+- **ADMIN_ONLY** - Only administrators can access this option.
+
+---
+
+### enum LuraphOptionType
+
+Values:
+- **CHECKBOX** - Expects a boolean value.
+- **DROPDOWN** - Expects a value contained in the option choices.
+- **TEXT** - Expects any textual imput.
+
+---
 
 ## Useful Links
 - [Visit the Luraph Website](https://lura.ph/ "Luraph - Online Lua Obfuscation")

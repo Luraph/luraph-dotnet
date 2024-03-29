@@ -6,6 +6,18 @@ using System.Text.Json.Serialization;
 
 namespace Luraph.APITypes
 {
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum LuraphOptionTier
+    {
+        CUSTOMER_ONLY, PREMIUM_ONLY, ADMIN_ONLY
+    }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum LuraphOptionType
+    {
+        CHECKBOX, DROPDOWN, TEXT
+    }
+
     public readonly struct LuraphOption
     {
         [JsonPropertyName("name")]
@@ -15,10 +27,10 @@ namespace Luraph.APITypes
         public readonly string Description;
 
         [JsonPropertyName("tier")]
-        public readonly string Tier;
+        public readonly LuraphOptionTier Tier;
 
         [JsonPropertyName("type")]
-        public readonly string Type;
+        public readonly LuraphOptionType Type;
 
         [JsonPropertyName("required")]
         public readonly bool Required;
@@ -30,7 +42,7 @@ namespace Luraph.APITypes
         public readonly Dictionary<string, object[]>? Dependencies;
 
         [JsonConstructor]
-        public LuraphOption(string name, string description, string tier, string type, string[] choices) => (Name, Description, Tier, Type, Choices) = (name, description, tier, type, choices);
+        public LuraphOption(string name, string description, LuraphOptionTier tier, LuraphOptionType type, string[] choices) => (Name, Description, Tier, Type, Choices) = (name, description, tier, type, choices);
     }
 
     public readonly struct LuraphNode
